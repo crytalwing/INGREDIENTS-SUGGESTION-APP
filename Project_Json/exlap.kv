@@ -1,0 +1,478 @@
+#vertical
+#horizontal
+#:import Snackbar kivymd.uix.snackbar.Snackbar
+#:import Factory kivy.factory.Factory
+
+
+ScreenManager:
+    AccountScreen:
+        name:'AccountScreen'
+        id: acc
+    SuggestScreen:
+        name:'SuggestScreen'
+
+<AccountScreen>:
+    BoxLayout:
+        orientation:'vertical'
+        MDBottomNavigation:
+            MDBottomNavigationItem:
+                name:'screen 1'
+                text:'Login'
+                text_size:dp(18)
+                icon: 'icon/user.png'
+                MDBoxLayout:
+                    orientation:"vertical"
+                    MDBoxLayout:
+                        orientation:"vertical"
+                        size_hint: 1,1
+                        Image:
+                            source: 'icon/loginac.gif'
+                            size_hint: 1,2
+                    MDBoxLayout:
+                        orientation:"vertical"
+                        RelativeLayout:
+                            MDTextField:
+                                id: txtphone
+                                multiline: False
+                                size_hint: .8,.5
+                                pos_hint: {'center_x':0.5,"center_y":0.8}
+                                font_size: dp(20)
+                                hint_text: "Phone number"
+                                max_text_length: 10
+                            Widget:
+                                size_hint: 1,1
+                            MDTextField:
+                                id: txtpassword
+                                size_hint: .8,.5
+                                pos_hint: {'center_x':0.5,"center_y":0.1}
+                                font_size: dp(20)
+                                password: True
+                                hint_text: "Password"
+                            MDIconButton:
+                                icon: "eye-off"
+                                pos_hint: {"center_x":0.8,"center_y": .1}
+                                pos: txtpassword.width,0
+                                theme_text_color: "Hint"
+                                on_release:
+                                    self.icon = "eye" if self.icon == "eye-off" else "eye-off"
+                                    txtpassword.password = False if txtpassword.password is True else True
+                        MDBoxLayout:
+                            orientation:'horizontal'
+                            spacing: dp(10)
+                            Widget:
+                                size_hint: .2,.2
+                            Button:
+                                id: btnloggin
+                                text: 'Login'
+                                font_size:dp(18)
+                                size_hint: (.2,.25)
+                                pos_hint: {"top":0.5}
+                                background_color:'#006699'
+                                on_press: 
+                                    t=root.check_ac(txtphone.text,txtpassword.text) 	
+                                    if t=='True': root.manager.current='MainScreen'
+                                    else: Snackbar(text="[color=#CC0000]    Password or Phone is False![/color]",bg_color=(1, 1, 1, 1),size_hint_x=1,pos_hint={"center_x":0.5}).open()
+                            Widget:
+                                size_hint: .05,.2
+            MDBottomNavigationItem:
+                name:'screen 2'
+                text:'Create account'
+                icon:'icon/add-user.png'
+                MDBoxLayout:
+                    orientation:"vertical"
+                    spacing:dp(20)
+                    adaptive_height: False
+                    MDBoxLayout:
+                        spacing:dp(20)
+                        orientation:"vertical"
+                        adaptive_height: False
+                        Image:
+                            source: 'icon/newac.gif'
+                        MDTextField:
+                            id: txtphone_newac
+                            size_hint: .8,.3
+                            pos_hint: {'center_x':0.5,'center_y':.8}
+                            font_size: dp(18)
+                            hint_text: "Numberphone"
+                        MDTextField:
+                            id: txtpassword_newac
+                            multiline: False
+                            password: True
+                            size_hint: .8,.3
+                            pos_hint: {'center_x':0.5,'center_y':.8}
+                            font_size: dp(20)
+                            hint_text: "Password"
+                        MDTextField:
+                            id: txtconfirm_newac
+                            multiline: False
+                            password: True
+                            size_hint: .8,.3
+                            pos_hint: {'center_x':0.5,'center_y':.8}
+                            font_size: dp(20)
+                            hint_text: "Confirm"
+            MDBottomNavigationItem:
+                name:'screen 3'
+                text: "Next"
+                icon:'icon/right-arrow.png'
+                MDBoxLayout:
+                    orientation:"vertical"
+                    spacing:dp(20)
+                    adaptive_height: False
+                    MDBoxLayout:
+                        spacing:dp(20)
+                        orientation:"vertical"
+                        adaptive_height: False
+                        MDTextField:
+                            id: txtname_newac
+                            multiline: False
+                            size_hint: .8,.5
+                            pos_hint: {'center_x':0.5,'center_y':.8}
+                            font_size: dp(20)
+                            hint_text: "Your name"
+                        MDTextField:
+                            id: txtweight_newac
+                            multiline: False
+                            size_hint: .8,.5
+                            pos_hint: {'center_x':0.5,'center_y':.8}
+                            font_size: dp(20)
+                            hint_text: "Weight"
+                        MDTextField:
+                            id: txtheight_newac
+                            multiline: False
+                            size_hint: .8,.5
+                            pos_hint: {'center_x':0.5,'center_y':.8}
+                            font_size: dp(20)
+                            hint_text: "Hight"
+                        MDTextField:
+                            id: txtage_newac
+                            multiline: False
+                            size_hint: .8,.5
+                            pos_hint: {'center_x':0.5,'center_y':.8}
+                            font_size: dp(20)
+                            hint_text: "Age"
+                        Spinner:
+                            id: gender
+                            text:"Gender"
+                            values: ["male","female"]
+                            size_hint: .8,.3
+                            pos_hint: {'center_x':0.5,'center_y':.8}
+                            background_color: '#006699'
+
+                        Widget:
+                            size_hint: 1,0.5
+                        Button:
+                            id: btnCeateAc
+                            text:"Create"
+                            font_size: dp(22)
+                            background_color: '#006699'
+                            pos_hint:{"right":.96}
+                            size_hint: (.3,.25)
+                            on_press: 
+                                if  txtpassword_newac.text == txtconfirm_newac.text: root.create_ac(txtname_newac.text,txtpassword_newac.text,txtphone_newac.text,txtweight_newac.text,txtheight_newac.text,txtage_newac.text,gender.text);Snackbar(text="[color=#006699]    Successfull[/color]",bg_color=(1, 1, 1, 1),size_hint_x=1,pos_hint={"center_x":0.5}).open()
+                                else: Snackbar(text="[color=#CC0000]    Password and Confirm are different ![/color]",bg_color=(1, 1, 1, 1),size_hint_x=1,pos_hint={"center_x":0.5}).open()
+                        Widget:
+                            size_hint: .05,.2
+<MainScreen>:
+    BoxLayout:
+        orientation:'vertical'
+        MDBottomNavigation:
+            MDBottomNavigationItem:
+                name:' screen_home'
+                icon:'icon/home.png'
+                text:'Home'
+                MDBoxLayout:
+                    orientation:"vertical"
+                    size_hint: 1,1
+                    MDIconButton:
+                        icon: 'icon/left-arrow.png'
+                        icon: 'arrow-left'
+                        theme_icon_color: "Custom"
+                        icon_color: app.theme_cls.primary_color
+                        on_press: root.manager.current='AccountScreen'
+                    Image:
+                        source: 'icon/73982-healthy-or-junk-food.gif'
+                        size_hint: 1,2
+                    
+            MDBottomNavigationItem:
+                name:'screen_profile'
+                text:'Your Profile'
+                icon:'icon/badge.png'
+                on_tab_press: root.get_acc()
+                MDBoxLayout:
+                    orientation:"vertical"
+                    spacing: '20dp'
+                    Image:
+                        source:'icon/pro.gif'
+                        size_hint: 1,1
+                    MDTextField:
+                        id: txtphone
+                        multiline: False
+                        disabled: True
+                        size_hint: .8,.7
+                        pos_hint: {'center_x':0.5,'center_y':.8}
+                        font_size: dp(16)
+                        hint_text: "Numberphone"
+                        mode: "rectangle"
+                    MDTextField:
+                        id: txtname
+                        multiline: False
+                        disabled: True
+                        size_hint: .8,.7
+                        pos_hint: {'center_x':0.5,'center_y':.8}
+                        font_size: dp(16)
+                        hint_text: "Your name"
+                        mode: "rectangle"
+                    MDTextField:
+                        id: txtweight
+                        multiline: False
+                        disabled: True
+                        size_hint: .8,.7
+                        pos_hint: {'center_x':0.5,'center_y':.8}
+                        font_size: dp(16)
+                        hint_text: "Weight"
+                        mode: "rectangle"
+                    MDTextField:
+                        id: txtheight
+                        multiline: False
+                        disabled: True
+                        size_hint: .8,.7
+                        pos_hint: {'center_x':0.5,'center_y':.8}
+                        font_size: dp(16)
+                        hint_text: "Hight"
+                        mode: "rectangle"
+                    MDTextField:
+                        id: txtage
+                        multiline: False
+                        disabled: True
+                        size_hint: .8,.7
+                        pos_hint: {'center_x':0.5,'center_y':.8}
+                        font_size: dp(16)
+                        hint_text: "Age"
+                        mode: "rectangle"
+                    MDTextField:
+                        id: txtgender
+                        multiline: False
+                        disabled: True
+                        size_hint: .8,.7
+                        pos_hint: {'center_x':0.5,'center_y':.8}
+                        font_size: dp(16)
+                        hint_text: "Gender"
+                        mode: "rectangle"
+                    MDBoxLayout:
+                        orientation:"horizontal"
+                        spacing: "30dp"
+                        size_hint:0.3,0.5
+                        pos_hint:{"center_x":0.5,'center_y':.45}
+                        MDIconButton:
+                            id:btnSua
+                            icon:"icon/edit.png"
+                            on_press: txtgender.disabled=False;txtage.disabled=False;txtname.disabled=False;
+                        MDIconButton:
+                            id:btnUpdate
+                            icon:'icon/check.png'
+                            on_press: 
+                                root.fix_acc()
+                                Snackbar(text="[color=#006699]    Successfull[/color]",bg_color=(1, 1, 1, 1),size_hint_x=1,pos_hint={"center_x":0.5}).open()
+                    Widget:
+                        size_hint: 1,.02
+            MDBottomNavigationItem:
+                name:'screen_index'
+                text: "Index"
+                icon:'icon/remove-user.png'
+                on_tab_press: root.bmr_cal();root.BMR_acc()
+                MDBoxLayout:
+                    orientation:"vertical"
+                    spacing: '20dp'
+                    Image:
+                        source:'icon/59964-burger.gif'
+                        size_hint: 1,1
+                        pos_hint:{"center_x":0.5,'center_y':.45}
+                    MDBoxLayout:
+                        orientation:"horizontal"
+                        spacing: '20dp'
+                        size_hint:1,0.2
+                        Widget:
+                            size_hint: 0.05,1
+                        MDTextField:
+                            id: bmrtext
+                            multiline: False
+                            disabled: True
+                            size_hint: .8,1
+                            pos_hint: {'center_x':0.8,'center_y':.7}
+                            font_size: dp(20)
+                            hint_text: "BMR"
+                            mode: "rectangle"
+                        Widget:
+                            size_hint: 0.05,1
+                        MDTextField:
+                            id: calotext
+                            multiline: False
+                            disabled: True
+                            size_hint: .8,1
+                            pos_hint: {'center_x':0.8,'center_y':.7}
+                            font_size: dp(20)
+                            hint_text: "Calories"
+                            mode: "rectangle"
+                        Widget:
+                            size_hint: 0.05,1
+                    BoxLayout:
+                        orientation:"vertical"
+                        size_hint: 1,.5
+                        Spinner:
+                            id: spinner_id
+                            text: "Activity Level"
+                            size_hint: 0.93,0.05
+                            pos_hint: {'center_x':0.5,'center_y':.5}
+                            values: ["Little or no excercise","Excercise 1-3 times/week","Excercise 4-5 times/week","Daily or intense excercise 3-4 times/week","Intense excercise 6-7 times/week","Very intense excercise daily or physical job"]
+                            background_color:'#006699'
+                            on_text: 
+                                root.activity_level(spinner_id.text)
+                        Widget:
+                            size_hint: 1,.05
+                        MDIconButton:
+                            icon:'icon/pie-chart.png'
+                            pos_hint: {'center_x':0.5,'center_y':.5}
+                            text_color: 1, 0, 0, 1
+                            line_color: 0, 0, 1, 1
+                            on_press: 
+                                root.manager.current='SuggestScreen' 	
+                        Widget:
+                            size_hint: 1,0.02
+            MDBottomNavigationItem:
+                name:'screen_update'
+                text: "Update"
+                icon:'icon/top-alignment.png'
+                MDBoxLayout:
+                    orientation:'vertical'
+                    Image:
+                        source: 'icon/79172-update.gif'
+                        size_hint: 1,2
+                    MDTextField:
+                        id: txtweight_up
+                        multiline: False
+                        size_hint: .8,.3
+                        pos_hint: {'center_x':0.5,'center_y':.8}
+                        font_size: dp(16)
+                        hint_text: "Weight"
+                        mode: "rectangle"
+                    Widget:
+                        size_hint: 1,.05
+                    MDTextField:
+                        id: txtheight_up
+                        multiline: False
+                        size_hint: .8,.3
+                        pos_hint: {'center_x':0.5,'center_y':.8}
+                        font_size: dp(16)
+                        hint_text: "Height"
+                        mode: "rectangle"
+                    Widget:
+                        size_hint: 1,.05
+                    Button:
+                        id: btnUpdate
+                        text:"Update"
+                        font_size: dp(20)
+                        background_color: '#006699'
+                        pos_hint:{"right":.96}
+                        size_hint: (.3,.18)
+                        on_press: bmrtext.text=root.update(txtweight_up.text,txtheight_up.text);Snackbar(text="[color=#CC0000]    Successful ![/color]",bg_color=(1, 1, 1, 1),size_hint_x=1,pos_hint={"center_x":0.5}).open();txtheight.text=txtheight_up.text;txtweight.text=txtweight_up.text;
+<SuggestScreen>:
+    BoxLayout:
+        orientation:'vertical'
+        MDBottomNavigation:
+            MDBottomNavigationItem:
+                name:'Chart'
+                icon:'icon/pie-chart.png'
+                text:'Chart'
+                on_tab_press: spaceholder.add_widget(Factory.DrawPlot())
+                BoxLayout:
+                    orientation:'vertical'
+                    BoxLayout:
+                        orientation:'vertical'
+                        size_hint:1,0.1
+                        MDIconButton:
+                            text: "hello"
+                            icon: 'icon/left-arrow.png'
+                            icon: 'arrow-left'
+                            theme_icon_color: "Custom"
+                            icon_color: app.theme_cls.primary_color
+                            on_press: root.manager.current='MainScreen' ;spaceholder.clear_widgets()
+                    BoxLayout:
+                        orientation:'vertical'
+                        id: spaceholder
+            MDBottomNavigationItem:
+                name:'screen 2'
+                icon:'icon/gain-weight.png'
+                text:'Gain'
+                on_tab_press: root.gain_weight();spaceholder.clear_widgets()
+                MDBoxLayout:
+                    orientation:"vertical"
+                    spacing: '20dp'
+                    MDTextField:
+                        id: gaintext
+                        multiline: False
+                        disabled: True
+                        size_hint: .8,.2
+                        pos_hint: {'center_x':0.5,'center_y':.5}
+                        font_size: dp(16)
+                        hint_text: "Calories"
+                        mode: "rectangle"
+                    ScrollView:
+                        MDList:
+                            id: gaincontainer
+                            pos_hint: {'center_x':0.5,'center_y':0.8}
+                    Widget:
+                        size_hint: 1,0.05
+            MDBottomNavigationItem:
+                name:'screen 3'
+                text: "Loss"
+                icon:'icon/weight-loss.png'
+                on_tab_press: root.loss_weight();spaceholder.clear_widgets()
+                MDBoxLayout:
+                    orientation:"vertical"
+                    spacing: '20dp'
+                    MDTextField:
+                        id: losstext
+                        multiline: False
+                        disabled: True
+                        size_hint: .8,.2
+                        pos_hint: {'center_x':0.5,'center_y':.5}
+                        font_size: dp(16)
+                        hint_text: "Calories"
+                        mode: "rectangle"
+                    ScrollView:
+                        MDList:
+                            id: losscontainer
+                            pos_hint: {'center_x':0.5,'center_y':0.8}
+                    Widget:
+                        size_hint: 1,0.05
+            MDBottomNavigationItem:
+                name:'screen 4'
+                text: "Keep"
+                icon:'icon/balance-scale.png'
+                on_tab_press: root.keep_weight();spaceholder.clear_widgets()
+                MDBoxLayout:
+                    orientation:"vertical"
+                    spacing: '20dp'
+                    MDTextField:
+                        id: keeptext
+                        multiline: False
+                        disabled: True
+                        size_hint: .8,.2
+                        pos_hint: {'center_x':0.5,'center_y':.5}
+                        font_size: dp(16)
+                        hint_text: "Calories"
+                        mode: "rectangle"
+                    ScrollView:
+                        MDList:
+                            id: keepcontainer
+                            pos_hint: {'center_x':0.5,'center_y':0.8}
+                    Widget:
+                        size_hint: 1,0.05
+               
+<DrawPlot>:
+    AnchorLayout:
+        orientation:'vertical'
+        id: box
+        anchor_x: 'left'
+        anchor_y: 'center'
+        size_hint: 1,1

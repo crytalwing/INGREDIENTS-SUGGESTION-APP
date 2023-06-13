@@ -1,0 +1,365 @@
+{
+    "Food": [
+        {
+            "Name": "Apple",
+            "size": 4,
+            "typeSize": "oz",
+            "calories": 59,
+            "Type": "Fruit"
+        },
+        {
+            "Name": "Banana",
+            "size": 6,
+            "typeSize": "oz",
+            "calories": 151,
+            "Type": "Fruit"
+        },
+        {
+            "Name": "Grapes",
+            "size": 1,
+            "typeSize": "cup",
+            "calories": 100,
+            "Type": "Fruit"
+        },
+        {
+            "Name": "Orange",
+            "size": 4,
+            "typeSize": "oz",
+            "calories": 53,
+            "Type": "Fruit"
+        },
+        {
+            "Name": "Peach",
+            "size": 6,
+            "typeSize": "oz",
+            "calories": 67,
+            "Type": "Fruit"
+        },
+        {
+            "Name": "Pear",
+            "size": 5,
+            "typeSize": "oz",
+            "calories": 82,
+            "Type": "Fruit"
+        },
+        {
+            "Name": "Pinepple",
+            "size": 1,
+            "typeSize": "cup",
+            "calories": 82,
+            "Type": "Fruit"
+        },
+        {
+            "Name": "Strawberry",
+            "size": 1,
+            "typeSize": "cup",
+            "calories": 53,
+            "Type": "Fruit"
+        },
+        {
+            "Name": "Watermelon",
+            "size": 1,
+            "typeSize": "cup",
+            "calories": 50,
+            "Type": "Fruit"
+        },
+        {
+            "Name": "Beef regular cooked",
+            "size": 2,
+            "typeSize": "oz",
+            "calories": 142,
+            "Type": "Protein"
+        },
+        {
+            "Name": "Chicken cooked",
+            "size": 2,
+            "typeSize": "oz",
+            "calories": 136,
+            "Type": "Protein"
+        },
+        {
+            "Name": "Egg",
+            "size": 1,
+            "typeSize": "large",
+            "calories": 78,
+            "Type": "Protein"
+        },
+        {
+            "Name": "Fish catfish cooked",
+            "size": 2,
+            "typeSize": "oz",
+            "calories": 136,
+            "Type": "Protein"
+        },
+        {
+            "Name": "Pork cooked",
+            "size": 2,
+            "typeSize": "oz",
+            "calories": 137,
+            "Type": "Protein"
+        },
+        {
+            "Name": "Shrimp cooked",
+            "size": 2,
+            "typeSize": "oz",
+            "calories": 56,
+            "Type": "Protein"
+        },
+        {
+            "Name": "Tofu",
+            "size": 4,
+            "typeSize": "oz",
+            "calories": 86,
+            "Type": "Protein"
+        },
+        {
+            "Name": "Applecider",
+            "size": 1,
+            "typeSize": "cup",
+            "calories": 117,
+            "Type": "Drink"
+        },
+        {
+            "Name": "Coca-cola",
+            "size": 1,
+            "typeSize": "can",
+            "calories": 150,
+            "Type": "Drink"
+        },
+        {
+            "Name": "Milk (1%)",
+            "size": 1,
+            "typeSize": "cup",
+            "calories": 102,
+            "Type": "Drink"
+        },
+        {
+            "Name": "Milk (2%)",
+            "size": 1,
+            "typeSize": "cup",
+            "calories": 122,
+            "Type": "Drink"
+        },
+        {
+            "Name": "Milk whole",
+            "size": 1,
+            "typeSize": "cup",
+            "calories": 146,
+            "Type": "Drink"
+        },
+        {
+            "Name": "Orange juice",
+            "size": 1,
+            "typeSize": "cup",
+            "calories": 111,
+            "Type": "Drink"
+        },
+        {
+            "Name": "Yogurt (low-fat)",
+            "size": 1,
+            "typeSize": "cup",
+            "calories": 154,
+            "Type": "Drink"
+        },
+        {
+            "Name": "Yogurt (non-Fat)",
+            "size": 1,
+            "typeSize": "cup",
+            "calories": 110,
+            "Type": "Drink"
+        },
+        {
+            "Name": "Asparagus",
+            "size": 1,
+            "typeSize": "cup",
+            "calories": 27,
+            "Type": "Vegetable"
+        },
+        {
+            "Name": "Brocoli",
+            "size": 1,
+            "typeSize": "cup",
+            "calories": 45,
+            "Type": "Vegetable"
+        },
+        {
+            "Name": "Carrots",
+            "size": 1,
+            "typeSize": "cup",
+            "calories": 50,
+            "Type": "Vegetable"
+        },
+        {
+            "Name": "Cucumber",
+            "size": 4,
+            "typeSize": "oz",
+            "calories": 17,
+            "Type": "Vegetable"
+        },
+        {
+            "Name": "Eggplant",
+            "size": 1,
+            "typeSize": "cup",
+            "calories": 35,
+            "Type": "Vegetable"
+        },
+        {
+            "Name": "Lettuce",
+            "size": 1,
+            "typeSize": "cup",
+            "calories": 5,
+            "Type": "Vegetable"
+        },
+        {
+            "Name": "Tomato",
+            "size": 1,
+            "typeSize": "cup",
+            "calories": 22,
+            "Type": "Vegetable"
+        },
+        {
+            "Name": "Bread white",
+            "size": 1,
+            "typeSize": "slice",
+            "calories": 75,
+            "Type": "Meal"
+        },
+        {
+            "Name": "Ceasar salad",
+            "size": 3,
+            "typeSize": "cup",
+            "calories": 481,
+            "Type": "Meal"
+        },
+        {
+            "Name": "Cheeseburger",
+            "size": 1,
+            "typeSize": "sandwich",
+            "calories": 285,
+            "Type": "Meal"
+        },
+        {
+            "Name": "Corn",
+            "size": 1,
+            "typeSize": "cup",
+            "calories": 132,
+            "Type": "Meal"
+        },
+        {
+            "Name": "Dark chocolate",
+            "size": 1,
+            "typeSize": "oz",
+            "calories": 155,
+            "Type": "Meal"
+        },
+        {
+            "Name": "Hamburger",
+            "size": 1,
+            "typeSize": "sandwich",
+            "calories": 250,
+            "Type": "Meal"
+        },
+        {
+            "Name": "Pizza",
+            "size": 1,
+            "typeSize": "slice",
+            "calories": 285,
+            "Type": "Meal"
+        },
+        {
+            "Name": "Potato (low-fat)",
+            "size": 6,
+            "typeSize": "oz",
+            "calories": 130,
+            "Type": "Meal"
+        },
+        {
+            "Name": "Rice",
+            "size": 1,
+            "typeSize": "cup",
+            "calories": 206,
+            "Type": "Meal"
+        },
+        {
+            "Name": "Sandwich",
+            "size": 1,
+            "typeSize": "loaf",
+            "calories": 200,
+            "Type": "Meal"
+        }
+    ],
+    "User": [
+        {
+            "name": "ADMIN",
+            "password": "IppaPy1",
+            "phone": "0965130199",
+            "weight": 59,
+            "height": 174,
+            "age": 20,
+            "gender": "male",
+            "weekly": [],
+            "current": 0,
+            "activity": 1,
+            "date": []
+        },
+        {
+            "name": "Nguyen Thi Tuong Vi",
+            "password": "12345",
+            "phone": "0347050842",
+            "weight": 43,
+            "height": 158,
+            "age": 20,
+            "gender": "female",
+            "weekly": [],
+            "current": 0,
+            "activity": 1,
+            "date": []
+        },
+        {
+            "name": "Vi",
+            "password": "3",
+            "phone": "3",
+            "weight": 45,
+            "height": 160,
+            "age": 3,
+            "gender": "female",
+            "weekly": [
+                1346,
+                1377,
+                1340,
+                1349,
+                1322,
+                1294,
+                1340,
+                1322,
+                1346
+            ],
+            "current": 1,
+            "activity": 1,
+            "date": [
+                "2022-03-16",
+                "2022-03-23",
+                "2022-03-30",
+                "2022-04-06",
+                "2022-04-13",
+                "2022-04-20",
+                "2022-04-27",
+                "2022-05-17",
+                "2022-05-17"
+            ]
+        },
+        {
+            "name": "Duy",
+            "password": "1234",
+            "phone": "0329297662",
+            "weight": 59,
+            "height": 174,
+            "age": 20,
+            "gender": "male",
+            "weekly": [],
+            "current": 0,
+            "activity": 1,
+            "date": []
+        }
+    ]
+}
